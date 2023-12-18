@@ -1,16 +1,217 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Github Page demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="index.js"></script>
+<!-- saved from url=(0044)https://zhengyouxiang.github.io/monitor.html -->
+<html class="pixel-ratio-1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="max-age=1800">
+    <title>心电监护设置</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="./心电监护设置_files/weui.css">
+    <link rel="stylesheet" href="./心电监护设置_files/weuix.css">
+    <script src="./心电监护设置_files/hm.js.下载"></script><script src="./心电监护设置_files/zepto.min.js.下载"></script>
+    <script src="./心电监护设置_files/zepto.weui.js.下载"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7970f0578210f22bbcac2a68635b42b8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <style>
+        .placeholder {
+            margin: 5px;
+            padding: 0 10px;
+            height: 2.3em;
+            line-height: 2.3em;
+            text-align: left;    
+        }
+    </style>
+       <script>
+        $(function(){
+            $(document).on("input", "#input-heart", function() {
+                var heart =  $('#input-heart').val();
+                if (heart < 10 ) {
+                    $('#txt-heart-1').text("-");
+                    $('#txt-heart-2').text("-");
+                } else if ( heart > 300) {
+                    $('#txt-heart-1').text("超出设置范围");
+                    $('#txt-heart-2').text("-");
+                 } else {
+                     if  (heart >= 70 && heart <= 90) {
+                         $('#txt-heart-1').text("100");
+                         $('#txt-heart-2').text("60");
+                     } else if (heart > 90) {
+                         var heart_temp1 = heart * 1.05;
+                         var heart_temp2 = heart * 1.1;
+                         $('#txt-heart-1').text(Math.floor(heart_temp1) + " ~ " + Math.floor(heart_temp2)) ;
+
+                         var heart_temp3 = heart * 0.7;
+                         var heart_temp4 = heart * 0.8;
+                         $('#txt-heart-2').text(Math.floor(heart_temp3) + " ~ " + Math.floor(heart_temp4)) ;
+                
+                     } else  {
+                         var heart_temp1 = heart * 1.2;
+                         var heart_temp2 = heart * 1.3;
+                         $('#txt-heart-1').text(Math.floor(heart_temp1) + " ~ " + Math.floor(heart_temp2)) ;
+                         var heart_temp3 = heart * 0.9;
+                         var heart_temp4 = heart * 0.95;
+                         $('#txt-heart-2').text(Math.floor(heart_temp3) + " ~ " + Math.floor(heart_temp4)) ;
+                
+                     }
+                 }
+            });
+
+            $(document).on("input", "#input-xy-s", function() {
+                var heart =  $('#input-xy-s').val();
+                if (heart < 10 ) {
+                    $('#txt-xys-1').text("-");
+                    $('#txt-xys-2').text("-");
+                } else if ( heart > 300) {
+                    $('#txt-xys-1').text("超出设置范围");
+                    $('#txt-xys-2').text("-");
+                 } else {
+                     if  (heart > 90 && heart < 140) {
+                         $('#txt-xys-1').text("140");
+                         $('#txt-xys-2').text("90");
+                     } else if (heart >= 140) {
+                         var heart_temp1 = heart * 1.05;
+                         var heart_temp2 = heart * 1.1;
+                         $('#txt-xys-1').text("(高) " + Math.floor(heart_temp1) + " ~ " + Math.floor(heart_temp2)) ;
+                         var heart_temp3 = heart * 0.7;
+                         var heart_temp4 = heart * 0.8;
+                         $('#txt-xys-2').text("(高) " + Math.floor(heart_temp3) + " ~ " + Math.floor(heart_temp4)) ;
+                
+                     } else  {
+                         var heart_temp1 = heart * 1.2;
+                         var heart_temp2 = heart * 1.3;
+                         $('#txt-xys-1').text("(低) " + Math.floor(heart_temp1) + " ~ " + Math.floor(heart_temp2)) ;
+                         var heart_temp3 = heart * 0.9;
+                         var heart_temp4 = heart * 0.95;
+                         $('#txt-xys-2').text("(低) " +Math.floor(heart_temp3) + " ~ " + Math.floor(heart_temp4)) ;
+                
+                     }
+                 }
+            });
+
+            $(document).on("input", "#input-xy-x", function() {
+                var heart =  $('#input-xy-x').val();
+                 if (heart < 10 ) {
+                    $('#txt-xyx-1').text("-");
+                    $('#txt-xyx-2').text("-");
+                } else if ( heart > 300) {
+                    $('#txt-xyx-1').text("超出设置范围");
+                    $('#txt-xyx-2').text("-");
+                 } else {
+                     if  (heart > 60 && heart < 90) {
+                         $('#txt-xyx-1').text("90");
+                         $('#txt-xyx-2').text("60");
+                     } else if (heart >= 90) {
+                         var heart_temp1 = heart * 1.05;
+                         var heart_temp2 = heart * 1.1;
+                         $('#txt-xyx-1').text("(高) " + Math.floor(heart_temp1) + " ~ " + Math.floor(heart_temp2)) ;
+                         var heart_temp3 = heart * 0.7;
+                         var heart_temp4 = heart * 0.8;
+                         $('#txt-xyx-2').text("(高) " + Math.floor(heart_temp3) + " ~ " + Math.floor(heart_temp4)) ;
+                
+                     } else  {
+                         var heart_temp1 = heart * 1.2;
+                         var heart_temp2 = heart * 1.3;
+                         $('#txt-xyx-1').text("(低) " + Math.floor(heart_temp1) + " ~ " + Math.floor(heart_temp2)) ;
+                         var heart_temp3 = heart * 0.9;
+                         var heart_temp4 = heart * 0.95;
+                         $('#txt-xyx-2').text("(低) " +Math.floor(heart_temp3) + " ~ " + Math.floor(heart_temp4)) ;
+                
+                     }
+                 }
+            });
+        });
+    </script>
 </head>
-<body>
-    <div id="main-content">
-        hello,world
+<body ontouchstart="">
+    <div>
+    <div class="weui-flex">
+        <div><div class="placeholder">心率报警上限</div></div>
+        <div class="weui-flex__item"><div class="placeholder" id="txt-heart-1">-</div></div>
     </div>
-</body>
-</html>
+    <div class="weui-flex">
+        <div><div class="placeholder">心率报警下限</div></div>
+        <div class="weui-flex__item"><div class="placeholder" id="txt-heart-2">-</div></div>
+    </div>
+    <div class="weui-flex">
+        <div><div class="placeholder">收缩压报警上限</div></div>
+        <div class="weui-flex__item"><div class="placeholder" id="txt-xys-1">-</div></div>
+    </div>
+    <div class="weui-flex">
+        <div><div class="placeholder">收缩压报警下限</div></div>
+        <div class="weui-flex__item"><div class="placeholder" id="txt-xys-2">-</div></div>
+    </div>
+    <div class="weui-flex">
+        <div><div class="placeholder">舒张压报警上限</div></div>
+        <div class="weui-flex__item"><div class="placeholder" id="txt-xyx-1">-</div></div>
+    </div>
+    <div class="weui-flex">
+        <div><div class="placeholder">舒张压报警下限</div></div>
+        <div class="weui-flex__item"><div class="placeholder" id="txt-xyx-2">-</div></div>
+    </div>
+</div>
+
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">心率</label></div>
+        <div class="weui-cell__bd">
+            <input id="input-heart" class="weui-input" pattern="[0-9]*" placeholder="次/分" type="number">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">收缩压</label></div>
+        <div class="weui-cell__bd">
+            <input id="input-xy-s" class="weui-input" pattern="[0-9]*" placeholder="mmHg" type="number">
+        </div>
+    </div>
+   <div class="weui-cell">
+         <div class="weui-cell__hd"><label class="weui-label">舒张压</label></div>
+        <div class="weui-cell__bd">
+            <input id="input-xy-x" class="weui-input" pattern="[0-9]*" placeholder="mmHg" type="number">
+        </div>
+    </div>
+
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">呼吸设置：</label></div>
+        <div class="weui-cell__bd">
+          10-30次/分，一般不低于8次/分
+        </div>
+    </div>
+     <div class="weui-cell">
+       <div class="weui-cell__hd"><label class="weui-label">血氧饱和度设置：</label></div>
+        <div class="weui-cell__bd">
+         95%-100%，一般不低于90%
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<table>
+    <thead>
+    <tr><th>特殊患者血压管理</th><th>收缩压 mmHg</th><th>舒张压 mmHg</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>急性缺血性卒中</td><td>&lt;200</td><td>&lt;110</td></tr>
+    <tr><td>急性缺血性卒中（有静脉溶栓适应症）</td><td>&lt;180</td><td>&lt;100</td></tr>
+    <tr><td>急性缺血性卒中（未接受静脉溶栓而计划进行动脉内治疗）</td><td>≤180</td><td>≤110</td></tr>
+    <tr><td>血管开通后（高血压患者）</td><td>控制血压低于基础血压20-30，不低于90</td><td>控制血压低于基础血压20-30，不低于60</td></tr>
+    <tr><td>出血性脑卒中（收缩压150-220）</td><td>目标值130-140</td><td></td></tr>
+    <tr><td>出血性脑卒中（收缩压&gt;220）</td><td>目标值160</td><td></td></tr>
+    </tbody>
+</table>
+
+<div class="weui-cell">
+     <div class="weui-cell__bd">
+      表格参考《中国急性缺血性脑卒中诊治指南2018》、《中国脑出血诊治指南(2019)》
+     </div>
+ </div>
+
+
+
+</body></html>
