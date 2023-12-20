@@ -57,11 +57,13 @@
                 $('#txt-xys-1').text(high_s);
                 $('#txt-xys-2').text(low_s <= 80 ? "80" : Math.floor(low_s));
                 if (x !== 0) {
-                    var high_avg = Math.floor(s + (s - x) / 3) + 15;
-                    var low_avg = Math.floor(s + (s - x) / 3) - 15;
+                    var avg = s + (s - x) / 3;
+                    var high_avg = Math.floor(avg) + 15;
+                    var low_avg = Math.floor(avg) - 15;
                     $('#txt-xyy-1').text(high_avg);
                     $('#txt-xyy-2').text(low_avg <= 60 ? "60" : low_avg);
                     $('#txt-xyz').text(x - s)
+                    $('#txt-xyu').text(avg)
                 }
             });
 
@@ -74,11 +76,13 @@
                 $('#txt-xyx-1').text(high_x);
                 $('#txt-xyx-2').text(low_x <= 50 ? "50" : Math.floor(low_x));
                 if (s !== 0) {
-                    var high_avg = Math.floor(s + (s - x) / 3) + 15;
-                    var low_avg = Math.floor(s + (s - x) / 3) - 15;
+                    var avg = s + (s - x) / 3;
+                    var high_avg = Math.floor(avg) + 15;
+                    var low_avg = Math.floor(avg) - 15;
                     $('#txt-xyy-1').text(high_avg);
                     $('#txt-xyy-2').text(low_avg <= 60 ? "60" : low_avg);
                     $('#txt-xyz').text(x - s)
+                    $('#txt-xyu').text(avg)
                 }
             });
         });
@@ -177,6 +181,14 @@
         </div>
         <div class="weui-flex__item">
             <div class="placeholder" id="txt-xyz">-</div>
+        </div>
+    </div>
+    <div class="weui-flex">
+        <div>
+            <div class="placeholder">平均动脉压</div>
+        </div>
+        <div class="weui-flex__item">
+            <div class="placeholder" id="txt-xyu">-</div>
         </div>
     </div>
 </div>
