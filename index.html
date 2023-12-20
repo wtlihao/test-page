@@ -57,7 +57,7 @@
                 $('#txt-xys-1').text(high_s);
                 $('#txt-xys-2').text(low_s <= 80 ? "80" : Math.floor(low_s));
                 if (x !== 0) {
-                    var avg = Math.floor(s + (s - x) / 3);
+                    var avg = Math.floor(x + (s - x) / 3);
                     var high_avg = avg + 15;
                     var low_avg = avg - 15;
                     $('#txt-xyy-1').text(high_avg);
@@ -76,7 +76,7 @@
                 $('#txt-xyx-1').text(high_x);
                 $('#txt-xyx-2').text(low_x <= 50 ? "50" : Math.floor(low_x));
                 if (s !== 0) {
-                    var avg = Math.floor(s + (s - x) / 3);
+                    var avg = Math.floor(x + (s - x) / 3);
                     var high_avg = avg + 15;
                     var low_avg = avg - 15;
                     $('#txt-xyy-1').text(high_avg);
