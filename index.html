@@ -49,10 +49,10 @@
             });
 
             $(document).on("input", "#input-xy-s", function () {
-                var s = $('#input-xy-s').val();
-                var x = $('#input-xy-x').val();
-                x = x === '' ? 0 : x * 1;
-                var high_s = s * 1 + 30;
+                var s = $('#input-xy-s').val() * 1;
+                var x = $('#input-xy-x').val() * 1;
+                x = x === '' ? 0 : x;
+                var high_s = s + 30;
                 var low_s = s - 30;
                 $('#txt-xys-1').text(high_s);
                 $('#txt-xys-2').text(low_s <= 80 ? "80" : Math.floor(low_s));
@@ -62,17 +62,17 @@
                     var low_avg = avg - 15;
                     $('#txt-xyy-1').text(high_avg);
                     $('#txt-xyy-2').text(low_avg <= 60 ? "60" : low_avg);
-                    $('#txt-xyz').text(x - s)
+                    $('#txt-xyz').text(s - x)
                     $('#txt-xyu').text(avg)
                 }
             });
 
             $(document).on("input", "#input-xy-x", function () {
-                var x = $('#input-xy-x').val();
-                var s = $('#input-xy-s').val();
-                s = s === '' ? 0 : s * 1;
-                var high_x = x * 1 + 15;
-                var low_x = x * 1 - 15;
+                var x = $('#input-xy-x').val() * 1;
+                var s = $('#input-xy-s').val() * 1;
+                s = s === '' ? 0 : s;
+                var high_x = x + 15;
+                var low_x = x - 15;
                 $('#txt-xyx-1').text(high_x);
                 $('#txt-xyx-2').text(low_x <= 50 ? "50" : Math.floor(low_x));
                 if (s !== 0) {
@@ -81,7 +81,7 @@
                     var low_avg = avg - 15;
                     $('#txt-xyy-1').text(high_avg);
                     $('#txt-xyy-2').text(low_avg <= 60 ? "60" : low_avg);
-                    $('#txt-xyz').text(x - s)
+                    $('#txt-xyz').text(s - x)
                     $('#txt-xyu').text(avg)
                 }
             });
